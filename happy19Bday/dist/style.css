@@ -1,0 +1,263 @@
+@charset "UTF-8";
+body {
+  padding: 30vh 1em 0;
+  background: #f6f2e7;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+svg {
+  height: 100%;
+  width: 100%;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.large {
+  width: 30vmin;
+}
+
+h1 {
+  font-size: 8vmin;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, sans-serif;
+  color: #1f74fb;
+}
+
+.glow {
+  position: relative;
+}
+.glow::before {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  width: 100%;
+  padding-bottom: 100%;
+  position: absolute;
+  top: -30%;
+  left: 0;
+  background: #ffac33;
+  z-index: -1;
+  -webkit-animation: glow 4s infinite;
+          animation: glow 4s infinite;
+}
+.glow::after {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  width: 100%;
+  padding-bottom: 50%;
+  position: absolute;
+  top: 55%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: -1;
+  -webkit-animation: glow 4s infinite;
+          animation: glow 4s infinite;
+}
+
+@-webkit-keyframes glow {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+}
+
+@keyframes glow {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+}
+.balloon {
+  display: inline-block;
+  width: 120px;
+  height: 145px;
+  background: #799ed2;
+  border-radius: 80%;
+  position: relative;
+  box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.07);
+  margin: 20px 30px;
+  transition: transform 0.5s ease;
+  z-index: 10;
+  -webkit-animation: balloons 4s ease-in-out infinite;
+          animation: balloons 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@-webkit-keyframes balloons {
+  0%, 100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(4deg);
+  }
+}
+
+@keyframes balloons {
+  0%, 100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(4deg);
+  }
+}
+.balloon:before {
+  content: "▲";
+  font-size: 20px;
+  color: #5979a6;
+  display: block;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: -12px;
+  z-index: -100;
+}
+
+.balloon:after {
+  display: inline-block;
+  top: 153px;
+  position: absolute;
+  height: 250px;
+  width: 1px;
+  margin: 0 auto;
+  content: "";
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.balloon:nth-child(2) {
+  background: #8882c9;
+  -webkit-animation-duration: 3.5s;
+          animation-duration: 3.5s;
+}
+
+.balloon:nth-child(2):before {
+  color: #8882c9;
+}
+
+.balloon:nth-child(3) {
+  background: #66cc86;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.balloon:nth-child(3):before {
+  color: #59a671;
+}
+
+.balloon:nth-child(4) {
+  background: #c9c85e;
+  -webkit-animation-duration: 4.5s;
+          animation-duration: 4.5s;
+}
+
+.balloon:nth-child(4):before {
+  color: #a9a860;
+}
+
+.balloon:nth-child(5) {
+  background: #ce8355;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+
+.balloon:nth-child(5):before {
+  color: #a96942;
+}
+
+.line-1 {
+  position: relative;
+  top: 50%;
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font-size: 180%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+
+/* Animation */
+.anim-typewriter {
+  -webkit-animation: typewriter 5s steps(44) 2 s 1 normal both, blinkTextCursor 500ms steps(44) infinite normal;
+          animation: typewriter 5s steps(44) 2 s 1 normal both, blinkTextCursor 500ms steps(44) infinite normal;
+}
+
+@-webkit-keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 30em;
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 30em;
+  }
+}
+@-webkit-keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+.button {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+.button:hover {
+  fill: #ff0000;
+}
+
+.defs {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+iframe {
+  float: left;
+  width: 300px;
+  height: 200px;
+}
+
+.buttons {
+  padding: 1rem;
+  background: #f6f2e7;
+}
